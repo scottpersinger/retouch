@@ -1,0 +1,21 @@
+<div style="float:right"><%= link_to 'logout', user_session_url, :method => :delete %></div>
+
+<h1>Welcome: <%= @user.name %></h1>
+
+<h2>Stories</h2>
+
+<%= link_to '&raquo; New Story', new_account_story_url %>
+<br /><br />
+
+<table style="width:300px">
+<% @stories.each do |story| %>
+  <tr>
+    <td><%= link_to story.title, account_story_url(story) %></td>
+    <td>| <%= link_to 'edit', edit_account_story_url(story) %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+

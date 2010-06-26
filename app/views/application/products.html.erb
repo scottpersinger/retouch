@@ -1,0 +1,16 @@
+<div style="float:right">
+  Your image: <%= @image %>
+</div>
+
+<div>
+  Thank you, <%= @email %>.
+</div>
+
+<h1>Choose your plan</h1>
+
+<% form_for "/purchase" do %>
+  <p><%= radio_button_tag :product, :basic, true %> <b>$9.95</b> See results from 2 designers</p>
+  <p><%= radio_button_tag :product, :pro %> <b>$14.95</b> See results from 3 designers</p>
+  <br />
+  <%= submit_tag "Purchase" %>
+<% end %>

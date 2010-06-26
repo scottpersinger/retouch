@@ -1,0 +1,561 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (28.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100602162347)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100602162347')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-23 18:09:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 573ms (View: 150, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 18:11:06) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+
+ActionController::UnknownAction (No action responded to home. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 18:11:18) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+
+ActionView::MissingTemplate (Missing template application/home.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 18:11:46) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 18:14:41) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 23:33:27) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+
+ActionView::TemplateError (undefined local variable or method `s3_swf_upload_tag' for #<ActionView::Base:0x23427e8>) on line #4 of app/views/application/home.html.erb:
+1: <h1>ReTouchMe.net</h1>
+2: 
+3: Enter your email: <%= text_field_tag :email %><br />
+4: Upload your photo: <%= s3_swf_upload_tag %>
+
+    app/views/application/home.html.erb:4
+
+Rendered rescues/_trace (95.6ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 23:33:41) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 74ms (View: 73, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 23:35:23) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index (for 127.0.0.1 at 2010-06-23 23:35:41) [GET]
+  Parameters: {"content_type"=>"null", "file_name"=>"AUTHORS", "action"=>"index", "file_size"=>"655", "controller"=>"s3_uploads", "do_checks"=>"0", "key"=>"prefix_in_bucket/AUTHORS"}
+Completed in 154ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads?file%5Fname=AUTHORS&do%5Fchecks=0&file%5Fsize=655&key=prefix%5Fin%5Fbucket%2FAUTHORS&content%5Ftype=null]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 23:36:55) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index (for 127.0.0.1 at 2010-06-23 23:37:05) [GET]
+  Parameters: {"content_type"=>"null", "file_name"=>"AUTHORS", "action"=>"index", "file_size"=>"655", "controller"=>"s3_uploads", "do_checks"=>"0", "key"=>"AUTHORS"}
+Completed in 139ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads?do%5Fchecks=0&file%5Fsize=655&content%5Ftype=null&file%5Fname=AUTHORS&key=AUTHORS]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-23 23:37:49) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index (for 127.0.0.1 at 2010-06-23 23:42:17) [GET]
+  Parameters: {"content_type"=>"null", "file_name"=>"AUTHORS", "action"=>"index", "file_size"=>"655", "controller"=>"s3_uploads", "do_checks"=>"0", "key"=>"AUTHORS"}
+Completed in 77ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads?do%5Fchecks=0&file%5Fsize=655&content%5Ftype=null&file%5Fname=AUTHORS&key=AUTHORS]
+
+
+Processing S3UploadsController#index (for 127.0.0.1 at 2010-06-23 23:45:25) [GET]
+  Parameters: {"content_type"=>"null", "file_name"=>"AUTHORS", "action"=>"index", "file_size"=>"655", "controller"=>"s3_uploads", "do_checks"=>"0", "key"=>"AUTHORS"}
+Completed in 150ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads?do%5Fchecks=0&file%5Fsize=655&content%5Ftype=null&file%5Fname=AUTHORS&key=AUTHORS]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 08:54:24) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 08:54:56) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 08:55:05) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 08:55:13) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:05:25) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 122ms (View: 120, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:05:39) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/s3_uploads_controller.rb:36:in `index'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:06:39) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/s3_uploads_controller.rb:36:in `index'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:06:46) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/s3_uploads_controller.rb:36:in `index'
+
+Rendered rescues/_trace (95.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:07:02) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 81ms (View: 79, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:07:12) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/s3_uploads_controller.rb:36:in `index'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: ActiveRecord::HasManyThroughCantAssociateThroughHasManyReflection is deprecated! Use ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection instead.. (called from process at /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/debug.rb:128)
+DEPRECATION WARNING: ActiveSupport::JSON::CircularReferenceError is deprecated! Use ActiveSupport::JSON::Encoding::CircularReferenceError instead.. (called from process at /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/debug.rb:128)
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:07:58) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/s3_uploads_controller.rb:36:in `index'
+
+Rendered rescues/_trace (77.6ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: ActiveRecord::HasManyThroughCantAssociateThroughHasManyReflection is deprecated! Use ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection instead.. (called from process at /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/debug.rb:128)
+DEPRECATION WARNING: ActiveSupport::JSON::CircularReferenceError is deprecated! Use ActiveSupport::JSON::Encoding::CircularReferenceError instead.. (called from process at /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/debug.rb:128)
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:08:11) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/s3_uploads_controller.rb:36:in `index'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:08:38) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 33ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:08:43) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:14:45) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 28ms (View: 27, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:14:51) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+Completed in 6046ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads.xml?content%5Ftype=image%2Fjpeg&key=images%2D1%2Ejpg]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:16:36) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:17:12) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 29ms (View: 28, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:17:17) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+Completed in 3913ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads.xml?content%5Ftype=image%2Fjpeg&key=images%2D1%2Ejpg]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:22:29) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:23:14) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+Completed in 156ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads.xml?key=images%2D1%2Ejpg&content%5Ftype=image%2Fjpeg]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:24:03) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+Completed in 159ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads.xml?key=images%2D1%2Ejpg&content%5Ftype=image%2Fjpeg]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:25:03) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:25:57) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:26:04) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"images-1.jpg"}
+Completed in 159ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads.xml?content%5Ftype=image%2Fjpeg&key=images%2D1%2Ejpg]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:26:24) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing S3UploadsController#index to xml (for 127.0.0.1 at 2010-06-24 10:26:35) [GET]
+  Parameters: {"content_type"=>"image/jpeg", "format"=>"xml", "action"=>"index", "controller"=>"s3_uploads", "key"=>"headshot_copy.jpg"}
+Completed in 158ms (View: 1, DB: 0) | 200 OK [http://localhost/s3_uploads.xml?key=headshot%5Fcopy%2Ejpg&content%5Ftype=image%2Fjpeg]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:28:14) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-24 10:30:27) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-25 17:26:39) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 150ms (View: 149, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-25 17:28:26) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-25 17:28:55) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-25 17:33:15) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-25 17:33:28) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 17:33:44) [POST]
+  Parameters: {"authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "image"=>"images-1.jpg", "email"=>"scotter"}
+
+ActionController::RoutingError (No route matches "/products" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 17:39:52) [POST]
+  Parameters: {"authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "image"=>"images-1.jpg", "email"=>"scotter"}
+
+ActionController::RoutingError (No route matches "/products" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 17:41:18) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>"images-1.jpg", "email"=>"scotter"}
+Rendering template within layouts/application
+Rendering application/products
+ERROR: compiling _run_erb_app47views47application47products46html46erb RAISED compile error
+/Users/scottp/github/retouch/app/views/application/products.html.erb:9: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47application47products46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Choose your plan</h2>\n"
+@output_buffer.concat "\n"
+ form_for "/purchase" ; @output_buffer.concat "\n"
+@output_buffer.concat "  <p>"; @output_buffer.concat(( radio_button_tag :product, :basic ).to_s); @output_buffer.concat " <b>$9.95</b> See results from 2 designers</p>\n"
+@output_buffer.concat "  <p>"; @output_buffer.concat(( radio_button_tag :product, :pro ).to_s); @output_buffer.concat " <b>$14.95</b> See results from 3 designers</p>\n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( submit_tag "Purchase" ).to_s); @output_buffer.concat "\n"
+ end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/scottp/github/retouch/app/views/application/products.html.erb:9:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:101:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:27:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:282:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+/usr/bin/mongrel_rails:19:in `load'
+/usr/bin/mongrel_rails:19
+
+ActionView::TemplateError (compile error
+/Users/scottp/github/retouch/app/views/application/products.html.erb:9: syntax error, unexpected kENSURE, expecting $end) on line #9 of app/views/application/products.html.erb:
+6:   <br />
+7:   <%= submit_tag "Purchase" %>
+8: <% end %>
+
+    app/views/application/products.html.erb:9:in `compile!'
+
+Rendered rescues/_trace (110.1ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 17:41:35) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>"images-1.jpg", "email"=>"scotter"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 17:41:43) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>"images-1.jpg", "email"=>"scotter"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 17:41:57) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>"images-1.jpg", "email"=>"scotter"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 17:44:09) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>"images-1.jpg", "email"=>"scotter"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 17:45:03) [POST]
+  Parameters: {"commit"=>"Purchase", "action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "product"=>"basic", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/products]

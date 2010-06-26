@@ -1,0 +1,24 @@
+
+<% form_tag "/products", :onsubmit => "return check_form(this)" do %>
+  Enter your email: <%= text_field_tag :email %><br />
+  Upload your photo:  <%= file_field_tag :image %>
+  <br />
+  <input type="submit" value="Upload" />
+<% end %>
+
+
+<script>
+  function check_form(form) {
+    if (form.email.value == '') {
+      alert("We need your email in case we need to contact you");
+      return false;
+    }
+    if (form.image.value == '') {
+      alert("Please pick a photo to upload");
+      return false;
+    }
+    return true;
+  }
+
+</script>
+

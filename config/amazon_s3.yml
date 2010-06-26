@@ -1,0 +1,14 @@
+development:
+  bucket: photosdev
+  access_key_id: 0VNSSH6QKSQN6AGJZR02
+  secret_access_key: Tt+GqxyQwqPTptfs2sb/qUY7wvoDiZEOApMHT/1u
+  acl: public-read
+  max_file_size: 209715200
+
+test:
+
+production:
+  bucket: photosprod
+  access_key_id: 0VNSSH6QKSQN6AGJZR02
+  secret_access_key: Tt+GqxyQwqPTptfs2sb/qUY7wvoDiZEOApMHT/1u
+  max_file_size: 209715200
