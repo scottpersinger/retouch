@@ -1,5 +1,5 @@
 development:
-  bucket: photosdev
+  bucket: net.retouchme.dev
   access_key_id: 0VNSSH6QKSQN6AGJZR02
   secret_access_key: Tt+GqxyQwqPTptfs2sb/qUY7wvoDiZEOApMHT/1u
   acl: public-read
@@ -8,7 +8,7 @@ development:
 test:
 
 production:
-  bucket: photosprod
+  bucket: net.retouchme.prod
   access_key_id: 0VNSSH6QKSQN6AGJZR02
   secret_access_key: Tt+GqxyQwqPTptfs2sb/qUY7wvoDiZEOApMHT/1u
   max_file_size: 209715200

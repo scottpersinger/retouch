@@ -20,7 +20,14 @@ class ApplicationController < ActionController::Base
     end
 
     @email = params[:email]
-    @image = params[:image]
+    @file = params[:image]
+
+    file_name = File.basename(@file.original_filename)
+    # File data in @image.read (File object)
+
+    customer = Customer.find_by_email(@email) || Customer.create(:email => @email)
+    @photo = Photo.create(:customer => customer, :file_name => file_name)
+    @photo.store_file(@file, 'image/jpeg', file_name)
   end
   
  private
@@ -60,4 +67,5 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
+
 end

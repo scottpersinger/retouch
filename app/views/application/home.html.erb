@@ -1,5 +1,5 @@
 
-<% form_tag "/products", :onsubmit => "return check_form(this)" do %>
+<% form_tag "/products", :multipart => true, :onsubmit => "return check_form(this)" do %>
   Enter your email: <%= text_field_tag :email %><br />
   Upload your photo:  <%= file_field_tag :image %>
   <br />
