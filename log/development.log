@@ -803,3 +803,194 @@ Processing ApplicationController#products (for 127.0.0.1 at 2010-06-25 23:33:22)
 Rendering template within layouts/application
 Rendering application/products
 Completed in 571ms (View: 4, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-28 18:06:37) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 169ms (View: 168, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-28 18:07:08) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:07:28) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.0>, "email"=>"scott@vodpod.com"}
+  [4;36;1mCustomer Load (0.3ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."email" = 'scott@vodpod.com') LIMIT 1[0m
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("updated_at", "file_name", "customer_id", "created_at") VALUES('2010-06-29 01:07:28', 'headshot copy.jpg', 1, '2010-06-29 01:07:28')[0m
+
+SocketError (getaddrinfo: nodename nor servname provided, or not known):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `initialize'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `connect'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/timeout.rb:53:in `timeout'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/timeout.rb:93:in `timeout'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `connect'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:553:in `do_start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:542:in `start'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/bucket.rb:79:in `create'
+  app/models/photo.rb:46:in `s3_upload'
+  app/models/photo.rb:16:in `store_file'
+  app/controllers/application_controller.rb:30:in `products'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:07:36) [GET]
+  Parameters: {"action"=>"products", "controller"=>"application"}
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/products]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-28 18:07:36) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:07:41) [GET]
+  Parameters: {"action"=>"products", "controller"=>"application"}
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/products]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-28 18:07:41) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:08:28) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.1>, "email"=>"scott@vodpod.com"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:12:22) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.2>, "email"=>"scott@vodpod.com"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:15:13) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.3>, "email"=>"scott@vodpod.com"}
+Rendering template within layouts/application
+Rendering application/products
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100602162347)
+Migrating to CreateCustomers (20100624011810)
+Migrating to CreatePhotos (20100624012011)
+Migrating to PhotoPurchases (20100629011833)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "photos" ADD "style" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "photos" ADD "product" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "photos" ADD "comments" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100629011833')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("customers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 18:21:00) [POST]
+  Parameters: {"commit"=>"Purchase", "comments"=>"", "action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "product"=>"basic", "controller"=>"application"}
+
+NoMethodError (undefined method `original_filename' for nil:NilClass):
+  app/controllers/application_controller.rb:25:in `products'
+
+Rendered rescues/_trace (100.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 20:27:02) [POST]
+  Parameters: {"commit"=>"Purchase", "comments"=>"", "action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "product"=>"basic", "controller"=>"application"}
+
+NoMethodError (undefined method `original_filename' for nil:NilClass):
+  app/controllers/application_controller.rb:25:in `products'
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 20:27:26) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.0>, "email"=>"scott@vodpod.com"}
+  [4;36;1mCustomer Load (0.2ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."email" = 'scott@vodpod.com') LIMIT 1[0m
+  [4;35;1mPhoto Create (1.2ms)[0m   [0mINSERT INTO "photos" ("updated_at", "comments", "file_name", "product", "customer_id", "created_at", "style") VALUES('2010-06-29 03:27:26', NULL, 'headshot copy.jpg', NULL, 1, '2010-06-29 03:27:26', NULL)[0m
+Rendering template within layouts/application
+Rendering application/products
+Completed in 652ms (View: 10, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 20:27:51) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.1>, "email"=>"scott@vodpod.com"}
+  [4;36;1mCustomer Load (0.2ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."email" = 'scott@vodpod.com') LIMIT 1[0m
+  [4;35;1mPhoto Create (0.4ms)[0m   [0mINSERT INTO "photos" ("updated_at", "comments", "file_name", "product", "customer_id", "created_at", "style") VALUES('2010-06-29 03:27:51', NULL, 'headshot copy.jpg', NULL, 1, '2010-06-29 03:27:51', NULL)[0m
+Rendering template within layouts/application
+Rendering application/products
+Completed in 530ms (View: 11, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#purchase (for 127.0.0.1 at 2010-06-28 20:27:54) [POST]
+  Parameters: {"commit"=>"Purchase", "comments"=>"", "action"=>"purchase", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "product"=>"basic", "controller"=>"application", "photo_id"=>"12", "email"=>"scott@vodpod.com", "style"=>"star"}
+  [4;36;1mCustomer Load (0.2ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."email" = 'scott@vodpod.com') LIMIT 1[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = '12') AND ("photos".customer_id = 1) LIMIT 1[0m
+  [4;36;1mPhoto Update (260.7ms)[0m   [0;1mUPDATE "photos" SET "comments" = '', "style" = 'star', "updated_at" = '2010-06-29 03:27:54', "product" = 'basic' WHERE "id" = 12[0m
+Rendering template within layouts/application
+Rendering application/purchase
+Completed in 281ms (View: 6, DB: 261) | 200 OK [http://localhost/purchase]
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2010-06-28 20:30:21) [GET]
+  Parameters: {"action"=>"home", "controller"=>"application"}
+Rendering template within layouts/application
+Rendering application/home
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/fbwm]
+
+
+Processing ApplicationController#products (for 127.0.0.1 at 2010-06-28 20:30:59) [POST]
+  Parameters: {"action"=>"products", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "controller"=>"application", "image"=>#<File:/var/folders/S-/S-cCbU-zHh8KAbQdZxJH7U+++TI/-Tmp-/RackMultipart.5226.0>, "email"=>"scott@vodpod.com"}
+  [4;35;1mCustomer Load (0.2ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."email" = 'scott@vodpod.com') LIMIT 1[0m
+  [4;36;1mPhoto Create (0.4ms)[0m   [0;1mINSERT INTO "photos" ("updated_at", "comments", "file_name", "product", "customer_id", "created_at", "style") VALUES('2010-06-29 03:30:59', NULL, 'images-2.jpg', NULL, 1, '2010-06-29 03:30:59', NULL)[0m
+Rendering template within layouts/application
+Rendering application/products
+Completed in 505ms (View: 6, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ApplicationController#purchase (for 127.0.0.1 at 2010-06-28 20:31:16) [POST]
+  Parameters: {"commit"=>"Purchase", "comments"=>"", "action"=>"purchase", "authenticity_token"=>"3o7LGOzKOcYjVudLfisCKWATYz8dwE5Vv0qhSN7KnkU=", "product"=>"pro", "controller"=>"application", "photo_id"=>"13", "email"=>"scott@vodpod.com", "style"=>"star"}
+  [4;35;1mCustomer Load (0.2ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."email" = 'scott@vodpod.com') LIMIT 1[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = '13') AND ("photos".customer_id = 1) LIMIT 1[0m
+  [4;35;1mPhoto Update (0.6ms)[0m   [0mUPDATE "photos" SET "comments" = '', "style" = 'star', "updated_at" = '2010-06-29 03:31:16', "product" = 'pro' WHERE "id" = 13[0m
+Rendering template within layouts/application
+Rendering application/purchase
+Completed in 24ms (View: 5, DB: 1) | 200 OK [http://localhost/purchase]
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" ORDER BY photos.id DESC LIMIT 1[0m

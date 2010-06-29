@@ -29,7 +29,18 @@ class ApplicationController < ActionController::Base
     @photo = Photo.create(:customer => customer, :file_name => file_name)
     @photo.store_file(@file, 'image/jpeg', file_name)
   end
-  
+
+  def purchase
+    customer = Customer.find_by_email(params[:email])
+    photo = customer.photos.find_by_id(params[:photo_id])
+    if photo
+      photo.comments = params[:comments]
+      photo.product = params[:product]
+      photo.style = params[:style]
+      photo.save!
+    end
+  end
+
  private
     def current_user_session
       return @current_user_session if defined?(@current_user_session)

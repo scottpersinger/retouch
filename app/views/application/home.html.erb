@@ -1,10 +1,32 @@
+<h1>Give yourself the Hollywood treatment!</h1>
 
-<% form_tag "/products", :multipart => true, :onsubmit => "return check_form(this)" do %>
-  Enter your email: <%= text_field_tag :email %><br />
-  Upload your photo:  <%= file_field_tag :image %>
-  <br />
-  <input type="submit" value="Upload" />
-<% end %>
+<h2>Benefits</h2>
+
+<ul>
+  <li>Great for profile photos</li>
+  <li>Look your best on Match.com</li>
+  <li>Help your resume stand out</li>
+</ul>
+
+
+  <fieldset>
+    <legend>3 easy steps!</legend>
+    <ol>
+      <li>Upload your photo and choose a package</li>
+      <li>Our photo experts compete to improve your photo the most</li>
+      <li>You pick your favorite result and download it</li>
+    </ol>
+  </fieldset>
+
+<fieldset>
+  <legend>Step 1</legend>
+  <% form_tag "/products", :multipart => true, :onsubmit => "return check_form(this)" do %>
+    Enter your email: <%= text_field_tag :email %><br />
+    Upload your photo:  <%= file_field_tag :image %>
+    <br />
+    <input type="submit" value="Upload" />
+  <% end %>
+</fieldset>
 
 
 <script>
