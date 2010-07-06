@@ -1,16 +1,20 @@
-<div style="float:right">
-  <%= image_tag(@photo.photo_url, :width => 100) %>
+<div style="width:200px;float:left">
+  Your email<br />
+  <span style="color:#666;"><%= @email %></span>
 </div>
 
-<div>
-  Thank you, <%= @email %>.
+<div style="float:left">
+  Your photo<br />
+  <%= image_tag(@photo.photo_url, :width => 160) if @photo %>
 </div>
+
+<div style="clear:both"></div>
 
 <% form_tag "/purchase" do %>
   <%= hidden_field_tag :email, @email %>
-  <%= hidden_field_tag :photo_id, @photo.id %>
+  <%= hidden_field_tag :photo_id, (@photo ? @photo.id : nil) %>
 
-  <h2>Choose your style</h2>
+  <h2 class="bluefont">Choose your style</h2>
   <table width="300px">
     <tr>
       <td>Natural</td>
@@ -27,7 +31,7 @@
   Any special requests?<br />
   <%= text_area_tag :comments %>
   
-  <h2>Choose your plan</h2>
+  <h2 class="bluefont">Choose your plan</h2>
 
   <table>
     <tr>
@@ -39,5 +43,5 @@
   </table>
 
   <br />
-  <%= submit_tag "Purchase" %>
+  <button type="submit">Purchase</button>
 <% end %>

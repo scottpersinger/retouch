@@ -58,3 +58,9 @@ class Photo < ActiveRecord::Base
 
 
 end
+
+class MockPhoto
+  def photo_url
+    "/images/before1.png"
+  end
+end

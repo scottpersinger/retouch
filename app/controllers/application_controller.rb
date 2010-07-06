@@ -1,5 +1,6 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
+require "photo"
 
 class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
@@ -15,19 +16,24 @@ class ApplicationController < ActionController::Base
 
   def products
     unless request.post?
-      redirect_to :action => 'home'
-      return
+    #  redirect_to :action => 'home'
+    #  return
     end
 
     @email = params[:email]
     @file = params[:image]
 
-    file_name = File.basename(@file.original_filename)
-    # File data in @image.read (File object)
+    if @email && @file
+      file_name = File.basename(@file.original_filename)
+      # File data in @image.read (File object)
 
-    customer = Customer.find_by_email(@email) || Customer.create(:email => @email)
-    @photo = Photo.create(:customer => customer, :file_name => file_name)
-    @photo.store_file(@file, 'image/jpeg', file_name)
+      customer = Customer.find_by_email(@email) || Customer.create(:email => @email)
+      @photo = Photo.create(:customer => customer, :file_name => file_name)
+      @photo.store_file(@file, 'image/jpeg', file_name)
+    else
+      @email = "scooter@test.com"
+      @photo = MockPhoto.new
+    end
   end
 
   def purchase

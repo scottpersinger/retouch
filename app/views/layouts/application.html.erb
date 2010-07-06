@@ -5,25 +5,128 @@
     <script>$j=jQuery;</script>
 
     <style>
+      body {
+        font-family: Arial, Verdana, Arial, serif;
+        margin:0;
+      }
+      .wrapper {
+        background: url(/images/backtext1.png);
+        padding:10px 40px;
+      }
       .site-header {
-        border-bottom:1px solid #CCC;
-        margin-bottom:10px;
+        border-bottom:2px solid #999;
+        padding:8px 40px;
+        font-size:24px;
+        background-color:#222;
+        height:40px;
+        color:#FFF;
+      }
+      .tagline {
+        float:left;
+        margin-left:10px;
+        font-size:14px;
+        line-height:40px;
+      }
+      .bluefont {
+        color:#0077CC;
+      }
+      .header1 {
+        font-family: helvetica;
+        text-align:center;
+        font-size:46px;
+        font-weight:bold;
+        padding:10px;
+      }
+
+      .callout {
+        background-color:#FFF;
+        border:2px solid #3A85B1;
+        padding:8px;
+        text-align:left;
+        font-size:18px;
+        width:80%;
+        margin:10px auto;
+
+      }
+      .callout .header2 {
+        font-size:1.5em;
+        font-weight:bold;
+        text-align:center;
+      }
+
+      .footer {
+        background-color:#222;
+        border-top:1px solid #CCC;
+        padding: 15px 40px;
+        font-size:0.8em;
+        color:#FFF;
+      }
+      .footer a {
+        color:#666;
+      }
+      .inputform {
+        font-size:1.1em;
+        padding:4px;
+        width:200px;
+      }
+      label {
+        font-size:1.3em;
+        color:#333;
+        padding:4px;
+        width:200px;
+        display:block;
+        float:left;
+        margin:4px 10px 4px 0px;
+      }
+      button {
+        font-size:1.2em;
+        background-color:#E47117;
+        color:white;
+        padding:2px 8px;
+        border:1px solid #666;
+      }
+
+      .col1 {
+        float:left;
+        width:50%;
+        padding:0;
+      }
+
+      .col2 {
+        float:left;
+        width:50%;
+        padding:0;
+        text-align:right;
       }
     </style>
   </head>
   <body>
     <div class="site-header">
-      <h1>ReTouchMe.net</h1>
+      <div style="float:left">
+        <img src="/images/logo1.png" style="margin-top:-8px"/>
+      </div>
+      <div class="tagline">Photo editing service &middot; we help you look your best!</div>
+      <div style="clear:both"></div>
     </div>
 
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-      <p class="alert"><%= flash[:alert] %></p>
-    <% end %>
-      
-    <%= @content_for_layout %>
+    <div class="wrapper">
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+
+      <%= @content_for_layout %>
+    </div>
+
+    <div class="footer">
+      <div style="float:right">
+        (c) USA Media Services, 2010
+      </div>
+      <p><%= link_to 'About' %></p>
+      <p><%= link_to 'Send Feedback' %></p>
+    </div>
 
 <script type="text/javascript">
 

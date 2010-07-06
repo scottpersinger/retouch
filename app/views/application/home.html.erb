@@ -1,32 +1,48 @@
-<h1>Give yourself the Hollywood treatment!</h1>
+<div class="header1">
+  Give your photos the celebrity treatment!
+</div>
 
-<h2>Benefits</h2>
+<div class="col1">
+  <img src="/images/before1.png" style="display:block;margin:0 auto;"/>
 
-<ul>
-  <li>Great for profile photos</li>
-  <li>Look your best on Match.com</li>
-  <li>Help your resume stand out</li>
-</ul>
+  <div class="callout">
+    <div style="float:right">
+      <img src="/images/moneyback.jpg" width="100" />
+    </div>
+    <div class="header2 bluefont">Benefits</div>
+    <ul>
+      <li>Great for <b>profile photos</b></li>
+      <li>Perfect photos get the <b>best dates</b> at Match.com</li>
+      <li>Project a <b>professional image</b> online</li>
+    </ul>
+  </div>
+</div>
 
+<div class="col2">
+  <img src="/images/after1.png" width="379" height="252" style="display:block;margin:0 auto" />
 
-  <fieldset>
-    <legend>3 easy steps!</legend>
+  <div class="callout">
+    <div class="header2 bluefont">3 easy steps!</div>
+
     <ol>
       <li>Upload your photo and choose a package</li>
-      <li>Our photo experts compete to improve your photo the most</li>
+      <li>Our photo experts compete to improve <br />your photo the most</li>
       <li>You pick your favorite result and download it</li>
     </ol>
-  </fieldset>
+  </div>
+</div>
 
-<fieldset>
-  <legend>Step 1</legend>
+<div style="clear:both"></div>
+
+<div style="border:1px solid #999;padding:8px;margin-top:20px;line-height:24px;width:65%;margin:20px auto 0px;background-color:#FFF">
+  <div style="font-size:1.2em" class="bluefont">Get Started!</div>
   <% form_tag "/products", :multipart => true, :onsubmit => "return check_form(this)" do %>
-    Enter your email: <%= text_field_tag :email %><br />
-    Upload your photo:  <%= file_field_tag :image %>
-    <br />
-    <input type="submit" value="Upload" />
+
+  <label>Enter your email</label><%= text_field_tag :email, nil, :class => 'inputform' %><div style="clear:both"></div>
+  <label>Upload your photo</label><%= file_field_tag :image, :style => 'margin-top:8px;font-size:1.1em' %><div style="clear:both"></div>
+    <button type="submit">Upload</button>
   <% end %>
-</fieldset>
+</div>
 
 
 <script>
