@@ -1,0 +1,17 @@
+<% if @thankyou %>
+<h2 style="margin:100px auto"><%= @thankyou %></h2>
+
+<% else %>
+  <h1>Send Feedback</h1>
+
+  <% form_tag do %>
+    <label>Your email</label>
+    <%= text_field_tag :gopher, nil, :class => "inputform" %>
+    <%= text_field_tag :email, nil, :class => "hidden" %>
+
+    <p><label>Message</label></p>
+    <p><%= text_area_tag :message, nil, :style => "width:400px;height:200px" %></p>
+
+    <button type="submit">Send</button>
+  <% end %>
+<% end %>

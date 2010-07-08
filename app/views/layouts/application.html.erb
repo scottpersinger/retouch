@@ -98,6 +98,9 @@
         padding:0;
         text-align:right;
       }
+      .hidden {
+        display:none;
+      }
     </style>
   </head>
   <body>
@@ -124,8 +127,8 @@
       <div style="float:right">
         (c) USA Media Services, 2010
       </div>
-      <p><%= link_to 'About' %></p>
-      <p><%= link_to 'Send Feedback' %></p>
+      <p><%= link_to 'About', '/about' %></p>
+      <p><%= link_to 'Send Feedback', '/feedback' %></p>
     </div>
 
 <script type="text/javascript">

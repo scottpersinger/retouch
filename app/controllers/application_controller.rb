@@ -47,6 +47,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def feedback
+    if request.post?
+      if !params[:email].blank?
+        # spam
+        redirect_to 'http://bitbucket.org'
+        return
+      end
+
+      logger.info "Feedback from (#{params[:gopher]}): #{params[:message]}"
+      Notifier.deliver_feedback(params[:gopher], params[:message])
+
+      @thankyou = "Thank you for your feedback!"
+    end
+  end
+  
  private
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
