@@ -1,48 +1,42 @@
-<div class="header1">
-  Give your photos the celebrity treatment!
+<div style="float:right;margin-top:76px;width:410px;">
+  <h1>We can turn <i>your</i> photo into a <i>hot pic!</i></h1>
+  <p class="shadowtext"><img src="/images/site/star1.png" />Hot pics are proven to get more attention online.</p>
+  <p class="shadowtext"><img src="/images/site/star2.png" />Get more <span class="under">emails</span> and <u>winks</u> on Match.com.</p>
+  <p class="shadowtext"><img src="/images/site/star3.png" />We can fix flaws, and make you look great.</p>
+
 </div>
 
-<div class="col1">
-  <img src="/images/before1.png" style="display:block;margin:0 auto;"/>
+<img src="/images/site/before1.png" style="position:absolute;top:39px;left:10px" />
+<img src="/images/site/after1.png" style="position:absolute;top:-88px;left:151px" />
 
-  <div class="callout">
-    <div style="float:right">
-      <img src="/images/moneyback.jpg" width="100" />
-    </div>
-    <div class="header2 bluefont">Benefits</div>
-    <ul>
-      <li>Great for <b>profile photos</b></li>
-      <li>Perfect photos get the <b>best dates</b> at Match.com</li>
-      <li>Project a <b>professional image</b> online</li>
-    </ul>
-  </div>
-</div>
-
-<div class="col2">
-  <img src="/images/after1.png" width="379" height="252" style="display:block;margin:0 auto" />
-
-  <div class="callout">
-    <div class="header2 bluefont">3 easy steps!</div>
-
-    <ol>
-      <li>Upload your photo and choose a package</li>
-      <li>Our photo experts compete to improve <br />your photo the most</li>
-      <li>You pick your favorite result and download it</li>
-    </ol>
-  </div>
+<div class="white-box" style="margin-top:400px;">
+  <table style="width:100%;font-size:20px" class="steps">
+    <td style="width:25%">
+      <h2>Step One:</h2>Upload your photo.<br />
+      <a href="#" id="get-started"><img src="/images/site/get-started.png" /></a>
+    </td>
+    <td style="width:37%"><h2>Step Two:</h2>Our photo experts create<br />the best version of your photo.</td>
+    <td style="width:37%"><h2>Step Three:</h2>You pick and download<br />your favorite one.</td>
+  </table>
 </div>
 
 <div style="clear:both"></div>
 
-<div style="border:1px solid #999;padding:8px;margin-top:20px;line-height:24px;width:65%;margin:20px auto 0px;background-color:#FFF">
-  <div style="font-size:1.2em" class="bluefont">Get Started!</div>
-  <% form_tag "/products", :multipart => true, :onsubmit => "return check_form(this)" do %>
-
-  <label>Enter your email</label><%= text_field_tag :email, nil, :class => 'inputform' %><div style="clear:both"></div>
-  <label>Upload your photo</label><%= file_field_tag :image, :style => 'margin-top:8px;font-size:1.1em' %><div style="clear:both"></div>
-    <button type="submit">Upload</button>
-  <% end %>
+<% form_tag "/products", :multipart => true, :onsubmit => "return check_form(this)" do %>
+<div class="white-box" style="visibility:hidden;margin-top:20px;" id="upload">
+  <table style="width:100%;font-size:20px;line-height:37px" class="steps">
+    <td style="width:25%">
+      <div>Enter your email</div>
+      <div>Choose photo</div>
+      <button type="submit" class="mybutton uploadbutton"></button>
+    </td>
+    <td style="width:70%">
+      <div style="height:37px"><input type="text" name="email" style="width:288px;height:22px;border-radius:10px;padding:2px 8px;font-size:18px"></input></div>
+      <div style="height:37px"><%= file_field_tag :image, :style => 'margin-top:8px;' %></div>
+    </td>
+  </table>
 </div>
+<% end %>
 
 
 <script>
@@ -57,6 +51,14 @@
     }
     return true;
   }
+
+  $j(function() {
+    $j('#get-started').click(function() {
+      $j('#upload').css('visibility', 'visible');
+      $j.scrollTo($j('#upload'));
+      return false;
+    })
+  })
 
 </script>
 

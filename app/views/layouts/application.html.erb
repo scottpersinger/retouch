@@ -1,58 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell">
+
     <%= javascript_include_tag('jquery.min') %>
+    <%= javascript_include_tag('jquery.scrollTo-min.js') %>
+      
     <script>$j=jQuery;</script>
 
     <style>
       body {
-        font-family: Arial, Verdana, Arial, serif;
+        font-family: 'Cantarell', Arial, Verdana, Arial, serif;
+        color:#FFF;
+        margin:0;
+      }
+      img {
+        vertical-align:middle;
+        border:0;
+      }
+      h1 {
+        letter-spacing: -2px;
+        font-size:27pt;
+        font-weight:bold;
+        line-height:33px;
+        text-shadow: #666 0px 1px 0px;
+      }
+      h2 {
+        text-transform:uppercase;
+        color:#000;
+        font-weight:bold;
+        font-size: 21px;
+        letter-spacing: -2px;
+        text-shadow: black 1px 1px 1px;
+        margin:0;
+      }
+      label {
+        color:#FFF;
+        letter-spacing: -1px;
+        font-size:18pt;
+        font-weight:bold;
+        line-height:33px;
+        text-shadow: #666 0px 0px 0px;
+        padding:4px;
+        width:200px;
+        display:block;
+        float:left;
+        margin:4px 10px 4px 0px;
+      }
+
+      .shadowtext {
+        font-size:19px;
+        letter-spacing:-1px;
+        text-shadow: #666 0px 2px 0px;
         margin:0;
       }
       .wrapper {
-        background: url(/images/backtext1.png);
-        padding:10px 40px;
+        background-color: #3091DA;
+        padding:10px 20px;
+        position:relative;
       }
       .site-header {
-        border-bottom:2px solid #999;
         padding:8px 40px;
         font-size:24px;
-        background-color:#222;
-        height:40px;
+        background-color:#121212;
+        height:25px;
         color:#FFF;
       }
-      .tagline {
-        float:left;
-        margin-left:10px;
-        font-size:14px;
-        line-height:40px;
+      .white-box {
+        margin-left:40px;
+        height:172px;width:916px;
+        background:url(/images/site/white-box.png) no-repeat;
       }
-      .bluefont {
-        color:#0077CC;
-      }
-      .header1 {
-        font-family: helvetica;
-        text-align:center;
-        font-size:46px;
-        font-weight:bold;
-        padding:10px;
+      table.steps td {
+        vertical-align:top;
+        padding:20px 15px 0px;
+        font-size:24px;
+        text-shadow:#666 0px 1px 0px;
+        letter-spacing:-2px;
       }
 
-      .callout {
-        background-color:#FFF;
-        border:2px solid #3A85B1;
-        padding:8px;
-        text-align:left;
-        font-size:18px;
-        width:80%;
-        margin:10px auto;
-
-      }
-      .callout .header2 {
-        font-size:1.5em;
-        font-weight:bold;
-        text-align:center;
-      }
 
       .footer {
         background-color:#222;
@@ -63,52 +89,52 @@
       }
       .footer a {
         color:#666;
+        text-shadow:#000 0px 0px 0px;
+        font-size:14px;
+        text-decoration:none;
       }
+      .footer a:hover {
+        text-decoration:underline;
+      }
+      
       .inputform {
         font-size:1.1em;
         padding:4px;
         width:200px;
       }
-      label {
-        font-size:1.3em;
-        color:#333;
-        padding:4px;
-        width:200px;
-        display:block;
-        float:left;
-        margin:4px 10px 4px 0px;
-      }
+      
       button {
-        font-size:1.2em;
-        background-color:#E47117;
-        color:white;
-        padding:2px 8px;
-        border:1px solid #666;
+        padding:0;
+        border:none;
+        margin:0;
+        background:none;
       }
 
-      .col1 {
-        float:left;
-        width:50%;
-        padding:0;
+      .mybutton {
+        background:url(/images/site/pro.png) no-repeat scroll right top;
+        width:147px;
+        height:48px;
       }
 
-      .col2 {
-        float:left;
-        width:50%;
-        padding:0;
-        text-align:right;
+      .mybutton:active {
+        background-position: right -48px;
+      }
+
+      .uploadbutton {
+        background:url(/images/site/upload-photo.png) no-repeat scroll right top;
       }
       .hidden {
         display:none;
+      }
+      .under {
+        text-decoration:underline;
       }
     </style>
   </head>
   <body>
     <div class="site-header">
-      <div style="float:left">
-        <img src="/images/logo1.png" style="margin-top:-8px"/>
-      </div>
-      <div class="tagline">Photo editing service &middot; we help you look your best!</div>
+      <a href="/"><img src="/images/site/logo1.png" /></a>
+      <!--div class="tagline">Photo editing service &middot; we help you look your best!</div-->
       <div style="clear:both"></div>
     </div>
 

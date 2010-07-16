@@ -1,47 +1,86 @@
-<div style="width:200px;float:left">
-  Your email<br />
-  <span style="color:#666;"><%= @email %></span>
-</div>
+<style>
+  .products {
+    width:550px;
+    border:1px solid #FFF;
+  }
+  .products td {
+    padding: 8px 10px;
+    font-size:20px;
+    text-align:center;
+    background:#FFF;
+    color:#000;
+    letter-spacing:-1px;
+  }
+  td.tableheader {
+    font-size:28pt;
+    color:#000;
+    background:#88c3f2;
+    text-align:center;
+  }
+  .probutton {
+    background:url(/images/site/pro.png) no-repeat scroll right top;
+  }
 
-<div style="float:left">
-  Your photo<br />
-  <%= image_tag(@photo.photo_url, :width => 160) if @photo %>
-</div>
+  .basicbutton {
+    background:url(/images/site/basic.png) no-repeat scroll right top;
+  }
+</style>
 
-<div style="clear:both"></div>
+<div style="float:right;width:300px;height:520px;padding:10px 20px;background:#90C1FF">
+  <h1>Your Info</h1>
+
+  <div style="color:#333;font-size:24px;margin:10px 0"><%= @email %></div>
+  <%= image_tag(@photo.photo_url, :width => 240, :style => "border:6px solid #999") if @photo %>
+</div>
 
 <% form_tag "/purchase" do %>
   <%= hidden_field_tag :email, @email %>
   <%= hidden_field_tag :photo_id, (@photo ? @photo.id : nil) %>
 
-  <h2 class="bluefont">Choose your style</h2>
-  <table width="300px">
+  <h1>Choose your retouch style</h1>
+  <table width="500px" style="font-size:20px;margin:0px 0px 20px">
     <tr>
       <td>Natural</td>
       <td>Professional</td>
-      <td>Star treatment!</td>
+      <td>Hot Pic!</td>
     </tr>
     <tr>
       <td><%= radio_button_tag :style, :natural %></td>
-      <td><%= radio_button_tag :style, :pro %></td>
-      <td><%= radio_button_tag :style, :star, true %></td>
+      <td><%= radio_button_tag :style, :pro, true %></td>
+      <td><%= radio_button_tag :style, :star %></td>
     </tr>
   </table>
 
-  Any special requests?<br />
-  <%= text_area_tag :comments %>
-  
-  <h2 class="bluefont">Choose your plan</h2>
+  <%= hidden_field_tag :product, :basic, :id => "product_choice" %>
 
-  <table>
-    <tr>
-      <td><%= radio_button_tag :product, :basic, true %> <b>$9.95</b></td> <td>2 designers compete to retouch your photo</td>
-    </tr>
-    <tr>
-      <td><%= radio_button_tag :product, :pro %> <b>$14.95</b></td><td> 4 designers compete to retouch your photo</td>
-    </tr>
-  </table>
+  <div style="width:550px;">
+    <h1>Instructions</h1>
+    Tell us what you want! If your photo is a group shot, indicate which person is you, and whether you want
+    your retouched photo show only you or not.<br />
+    <%= text_area_tag :comments, nil, :style => "margin-top:8px;width:550px;height:60px" %>
 
-  <br />
-  <button type="submit">Purchase</button>
+    <h1>Choose your plan</h1>
+
+    <table class="products">
+      <tr>
+        <td class="tableheader" style="border-right:1px solid #FFF;">Basic</td>
+        <td class="tableheader">Pro</td>
+      </tr>
+      <tr>
+        <td style="border-right:1px solid #FFF;">
+          <p>Pick from 2 versions</p>
+          <p>Results guaranteed!</p>
+          <p>&nbsp;</p>
+          <p><button type="submit" class="mybutton basicbutton" onclick="$j('#product_choice').val('basic')"></button>
+        </td>
+        <td>
+          <p>Pick from 3 versions</p>
+          <p>Hi-res download</p>
+          <p>Results guaranteed!</p>
+          <p><button type="submit" class="mybutton probutton" onclick="$j('#product_choice').val('pro')"></button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
 <% end %>
