@@ -28,11 +28,15 @@
     <td style="width:25%">
       <div>Enter your email</div>
       <div>Choose photo</div>
-      <button type="submit" class="mybutton uploadbutton"></button>
+      <div>
+        <div style="float:right;padding:13px 36px 0px 0px"><img id="indicator" src="/images/indicator.gif" style="display:none"/></div>
+        <button type="submit" class="mybutton uploadbutton"></button>
+      </div>
     </td>
     <td style="width:70%">
       <div style="height:37px"><input type="text" name="email" style="width:288px;height:22px;border-radius:10px;padding:2px 8px;font-size:18px"></input></div>
-      <div style="height:37px"><%= file_field_tag :image, :style => 'margin-top:8px;' %></div>
+      <div style="height:37px">        
+        <%= file_field_tag :image, :style => 'margin-top:8px;' %></div>
     </td>
   </table>
 </div>
@@ -49,6 +53,9 @@
       alert("Please pick a photo to upload");
       return false;
     }
+    // looks good
+    $j('#indicator').show();
+    $j('form button').attr('disabled', true).css('background-position', 'right -48px');
     return true;
   }
 
