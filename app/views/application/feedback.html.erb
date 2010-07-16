@@ -12,6 +12,6 @@
     <p><label>Message</label></p>
     <p><%= text_area_tag :message, nil, :style => "width:400px;height:200px" %></p>
 
-    <button type="submit">Send</button>
+    <%= submit_tag 'Send', :style => "font-size:1.2em" %>
   <% end %>
 <% end %>
