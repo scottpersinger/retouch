@@ -1,0 +1,68 @@
+<div class="examples">
+
+<div class="photo-holder" style="float:left">
+  <%= image_tag('before/anita.jpg', :id => "before") %>
+</div>
+
+<div class="photo-holder" style="float:left">
+  <%= image_tag('before/anita-after.png', :id => "after") %>
+</div>
+
+<div class="notecard" style="float:left;width:192px">
+  <h2 style="display:block;margin:0 auto">Features</h2>
+
+  <ul>
+    <li>Remove skin blemishes</li>
+    <li>Correct lighting</li>
+    <li>Slim arms and legs</li>
+    <li>Enhance and enlarge</li>
+    <li>Color balancing</li>
+    <li>Remove background</li>
+    <li>Zoom and center</li>
+  </ul>
+</div>
+
+<div style="clear:both"></div>
+<div style="padding-left:300px">
+  <p class="shadowtext"><a href="#" id="nextpic" style="color:#FFF">Next &raquo;</a></p>
+</div>
+
+</div>
+
+<script>
+  var befores = ['anita.jpg', 'arlene.jpg','gertrude.jpg'];
+  var afters = ['anita-after.png','arlene_after.png','gertrude_after.png'];
+
+  var current = 0;
+  var waiting = false;
+
+  $j(function() {
+    $j('#nextpic').mouseup(function(e) {
+      e.preventDefault();
+      if (waiting) {
+        return false;
+      }
+      
+      current++;
+      if (current > (befores.length-1)) {
+        current = 0;
+      }
+      waiting = true;
+      
+      $j("#before").attr('src', imgpath(befores[current]));
+      $j("#after").attr('src', imgpath(afters[current]));
+      setTimeout(function() {
+        waiting = false;
+      }, 300);
+      
+      return false;
+
+    });
+
+  });
+
+  function imgpath(img) {
+    return "/images/before/" + img;
+  }
+
+</script>
