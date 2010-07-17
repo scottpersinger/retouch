@@ -3,6 +3,7 @@
   <p class="shadowtext"><%= image_tag("site/star1.png") %>Hot pics are proven to get more attention online.</p>
   <p class="shadowtext"><%= image_tag("site/star2.png") %>Get more <span class="under">emails</span> and <u>winks</u> on Match.com.</p>
   <p class="shadowtext"><%= image_tag("site/star3.png") %>We can fix flaws, and make you look great.</p>
+  <p><a id="show_examples" href="#examples"><button type="submit" class="mybutton learnbutton"></button></a></p>
 
 </div>
 
@@ -42,6 +43,11 @@
 </div>
 <% end %>
 
+<div style="display:none">
+<div id="examples">
+  <%= render :partial => 'examples' %>
+</div>
+</div>
 
 <script>
   function check_form(form) {
@@ -65,7 +71,9 @@
       $j.scrollTo($j('#upload'));
       return false;
     })
-  })
+  });
+
+  $j('#show_examples').fancybox();
 
 </script>
 

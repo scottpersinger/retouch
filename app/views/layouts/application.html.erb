@@ -4,9 +4,14 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell">
     <title>Retouchme.net Photo Service</title>
 
-    <%= javascript_include_tag('jquery.min') %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+    <%= javascript_include_tag("fancybox/jquery.fancybox-1.3.1.pack.js") %>
+
     <%= javascript_include_tag('jquery.scrollTo-min.js') %>
-      
+
+    <%= stylesheet_link_tag("/javascripts/fancybox/jquery.fancybox-1.3.1.css") %>
+
     <script>$j=jQuery;</script>
 
     <style>
@@ -124,10 +129,69 @@
       .uploadbutton {
         background:url(/images/site/upload-photo.png) no-repeat scroll right top;
       }
+
+      .learnbutton {
+        background:url(/images/site/learn-more.png) no-repeat scroll right top;
+      }
+
       .hidden {
         display:none;
       }
       .under {
+        text-decoration:underline;
+      }
+
+      .photo-holder {
+        width:300px;
+        height:300px;
+        border:10px solid #FFF;
+        overflow:hidden;
+        position:relative;
+        margin-right:20px;
+      }
+
+      .photo-holder img {
+        width:360px;
+        position:absolute;
+        left:50%;
+        margin-left:-180px;
+      }
+      
+      .notecard {
+        -background-color:#E0B605;
+        background-color:#F7F79A;
+        color:black;
+        font-family:arial;
+        height:300px;
+        border:2px solid #AAA;
+        line-height:1.5em;
+        padding:8px 4px;
+      }
+
+      .notecard h2 {
+        display:block;
+        text-align:center;
+      }
+      
+      .examples {
+        border:2px groove #CCC;
+        padding:30px 8px;
+        background-color: #3091DA;
+      }
+
+      .examples ul {
+      }
+      
+      .examples li {
+        margin-left:-12px;
+      }
+      .examples a {
+        color:#FFF;
+        text-decoration:none;
+        text-shadow:none;
+      }
+
+      .examples a:hover {
         text-decoration:underline;
       }
     </style>

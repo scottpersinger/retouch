@@ -18,4 +18,4 @@ config.action_mailer.raise_delivery_errors = false
 
 require 'ruby-debug'
 
-ActionController::Base.asset_host = "https://s3.amazonaws.com/net.retouchme.prod"
+#ActionController::Base.asset_host = "https://s3.amazonaws.com/net.retouchme.prod"
