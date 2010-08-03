@@ -37,13 +37,15 @@ class ApplicationController < ActionController::Base
   end
 
   def purchase
-    customer = Customer.find_by_email(params[:email])
-    photo = customer.photos.find_by_id(params[:photo_id])
-    if photo
-      photo.comments = params[:comments]
-      photo.product = params[:product]
-      photo.style = params[:style]
-      photo.save!
+    if request.post? && params[:email]
+      customer = Customer.find_by_email(params[:email])
+      photo = customer.photos.find_by_id(params[:photo_id])
+      if photo
+        photo.comments = params[:comments]
+        photo.product = params[:product]
+        photo.style = params[:style]
+        photo.save!
+      end
     end
   end
 
