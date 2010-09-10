@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell">
+    <title>Retouchme.net Photo Service</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+    <%= javascript_include_tag("fancybox/jquery.fancybox-1.3.1.pack.js") %>
+
+    <%= javascript_include_tag('jquery.scrollTo-min.js') %>
+
+    <%= stylesheet_link_tag("/javascripts/fancybox/jquery.fancybox-1.3.1.css") %>
+
+    <script>$j=jQuery;</script>
+
+    <style>
+      body {
+        font-family: 'Cantarell', Arial, Verdana, Arial, serif;
+        color:#FFF;
+        margin:0;
+      }
+
+      img {
+        vertical-align:middle;
+        border:0;
+      }
+      h1 {
+        letter-spacing: -2px;
+        font-size:27pt;
+        font-weight:bold;
+        line-height:33px;
+        text-shadow: #666 0px 1px 0px;
+      }
+
+      h2 {
+        text-transform:uppercase;
+        color:#000;
+        font-weight:bold;
+        font-size: 21px;
+        letter-spacing: -2px;
+        text-shadow: black 1px 1px 1px;
+        margin:0;
+      }
+      label {
+        color:#FFF;
+        letter-spacing: -1px;
+        font-size:18pt;
+        font-weight:bold;
+        line-height:33px;
+        text-shadow: #666 0px 0px 0px;
+        padding:4px;
+        width:200px;
+        display:block;
+        float:left;
+        margin:4px 10px 4px 0px;
+      }
+
+      .shadowtext {
+        font-size:19px;
+        letter-spacing:-1px;
+        text-shadow: #666 0px 2px 0px;
+        margin:0;
+      }
+      .wrapper {
+        background-color: #3091DA;
+        padding:10px 20px;
+        position:relative;
+      }
+      .site-header {
+        padding:8px 40px;
+        font-size:24px;
+        background-color:#121212;
+        height:25px;
+        color:#FFF;
+      }
+      .white-box {
+        margin-left:40px;
+        height:172px;width:916px;
+        background:url(/images/site/white-box.png) no-repeat;
+      }
+      table.steps td {
+        vertical-align:top;
+        padding:20px 15px 0px;
+        font-size:24px;
+        text-shadow:#666 0px 1px 0px;
+        letter-spacing:-2px;
+      }
+
+
+      .footer {
+        background-color:#222;
+        border-top:1px solid #CCC;
+        padding: 15px 40px;
+        font-size:0.8em;
+        color:#FFF;
+      }
+      .footer a {
+        color:#666;
+        text-shadow:#000 0px 0px 0px;
+        font-size:14px;
+        text-decoration:none;
+      }
+      .footer a:hover {
+        text-decoration:underline;
+      }
+      
+      .inputform {
+        font-size:1.1em;
+        padding:4px;
+        width:200px;
+      }
+      
+      button {
+        padding:0;
+        border:none;
+        margin:0;
+        background:none;
+      }
+
+      .mybutton {
+        background:url(/images/site/pro.png) no-repeat scroll right top;
+        width:147px;
+        height:48px;
+      }
+
+      .mybutton:active {
+        background-position: right -48px;
+      }
+
+      .uploadbutton {
+        background:url(/images/site/upload-photo.png) no-repeat scroll right top;
+      }
+
+      .learnbutton {
+        background:url(/images/site/learn-more.png) no-repeat scroll right top;
+      }
+
+      .hidden {
+        display:none;
+      }
+      .under {
+        text-decoration:underline;
+      }
+
+      .photo-holder {
+        width:300px;
+        height:300px;
+        border:10px solid #FFF;
+        overflow:hidden;
+        position:relative;
+        margin-right:20px;
+      }
+
+      .photo-holder img {
+        width:360px;
+        position:absolute;
+        left:50%;
+        margin-left:-180px;
+      }
+      
+      .notecard {
+        -background-color:#E0B605;
+        background-color:#F7F79A;
+        color:black;
+        font-family:arial;
+        height:300px;
+        border:2px solid #AAA;
+        line-height:1.5em;
+        padding:8px 4px;
+      }
+
+      .notecard h2 {
+        display:block;
+        text-align:center;
+      }
+      
+      .examples {
+        border:2px groove #CCC;
+        padding:10px 8px;
+        background-color: #3091DA;
+        width:702px;
+      }
+
+      .examples ul {
+        float:left;
+        margin-right:20px;
+      }
+      
+      .examples li {
+        margin-left:-12px;
+      }
+      .examples a {
+        color:#FFF;
+        text-decoration:none;
+        text-shadow:none;
+      }
+
+      .examples a:hover {
+        text-decoration:underline;
+      }
+
+<!--[if IE]> 
+
+      body, h1, h2, p {
+        font-family: Arial;                                            
+      } 
+      .wrapper {
+        
+     }                        
+     h1, h2 {
+       font-family: Arial;
+     }
+     
+     table.steps td {
+        text-shadow:none;
+        font-family:Arial;
+     }
+     .products td {
+        text-shadow:none;
+        font-family:Arial;
+     }
+<![endif]-->
+
+    </style>
+
+
+  </head>
+  <body>
+    <div class="site-header">
+      <a href="/"><img src="/images/site/logo1.png" /></a>
+      <!--div class="tagline">Photo editing service &middot; we help you look your best!</div-->
+      <div style="clear:both"></div>
+    </div>
+
+    <div class="wrapper">
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+
+      <%= @content_for_layout %>
+    </div>
+
+    <div class="footer">
+      <div style="float:right">
+        (c) USA Media Services, 2010
+      </div>
+      <p><%= link_to 'About', '/about' %></p>
+      <p><%= link_to 'Send Feedback', '/feedback' %></p>
+    </div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17157384-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
